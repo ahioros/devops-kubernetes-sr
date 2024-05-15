@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: production
+  labels:
+    app: nginx
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: ahioros/rdicidr:latest
+      #        image: nginx:1.14.2
+        ports:
+        - containerPort: 3000
+        #        - containerPort: 80
+        env:
+        - name: MY_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: secret-basic-auth
+              key: MY_SECRET
