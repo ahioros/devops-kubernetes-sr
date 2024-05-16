@@ -10,5 +10,5 @@
 2- Create Docker image for the project.
 
 # Deploy to Kubernetes
-Deploy the project to a Kubernetes/minikube cluster.
-Deploy the project to a AKS/EKS/GKE cluster.
+* Deploy the project to a Kubernetes/minikube cluster.
+* Deploy the project to a AKS/EKS/GKE cluster.
